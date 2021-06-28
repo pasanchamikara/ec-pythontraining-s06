@@ -5,13 +5,17 @@ from rest_framework.views import APIView
 from .models import Course
 # Create your views here.
 
-class ListCourses(APIView):
+class ListCoursesAPIView(APIView):
     def get(self, request, format=None):
         courses = [course.name for course in Course.objects.all()]
         return Response(courses)
 
-class AddCourse(APIView):
+class CoursesAPIView(APIView):
+    def get(self, request):
+        return
     def post(self, request, format=None):
+        course = None
+        Course.Add(course)
         return Response()
 
 class DeleteCourse(APIView):
